@@ -98,7 +98,7 @@ services:
     environment:
       - node.name=es01
       - cluster.name=${CLUSTER_NAME}
-      - cluster.initial_master_nodes=es01 #,es02
+      - cluster.initial_master_nodes=es01 #,es02 [for additional nodes]
  #     - discovery.seed_hosts=es02
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
       - bootstrap.memory_lock=true
@@ -129,6 +129,7 @@ services:
       timeout: 10s
       retries: 120
 
+#  ADDITIONAL NODES
 #  es02:
 #    depends_on:
 #      - es01
@@ -296,9 +297,13 @@ sudo docker compose up -d
 - These will generate telemetry for which we'll create detection rules.
 - During Elastic agent installation, use Fleet server option.
 - Install agent using root or admin privileges.
-- Append '--insecure' option at the end of the install command.
+- Append `--insecure` option at the end of the `install` command.
 
 11. Switch off containers safely by using `sudo docker stop <container_name>`.
 
-- Start with fleet-server, then esk-kibana-1, then esk-es01-1.
+- Begin with fleet-server, then esk-kibana-1, then esk-es01-1.
 - When restarting the containers, follow the reverse order, i.e. ES then Kibana then Fleet.
+- To confirm that each container is up, do as follows:
+  - For ES, log in to https://host_ip:9200 using the user `elastic` and password set in the file `/esk/.env`.
+  - For Kibana, the URL is http://host_ip:5601 with the same credentials ^.
+  - For the Fleet container, you can check its health status in Kibana.
