@@ -24,7 +24,7 @@ cd data && mkdir es01data && mkdir kibanadata
 
 4. Create docker-compose.yml and .env files using the scripts below:
 
-## ES, Kibana Docker Compose YAML (goes into esk dir)
+##### ES, Kibana Docker Compose YAML (goes into esk dir)
 
 ```
 version: "3.9"
@@ -216,7 +216,7 @@ volumes:
     driver: local
 ```
 
-## ES, Kibana .env file (goes into esk dir)
+##### ES, Kibana .env file (goes into esk dir)
 
 ```
 ELASTIC_PASSWORD=<generate secure password>
@@ -236,7 +236,7 @@ ES1_DATA=/home/wilber/baseproject/data/es01data
 KIBANA_DATA=/home/wilber/baseproject/data/kibanadata
 ```
 
-## Fleet Docker Compose YAML (goes into fleet dir)
+##### Fleet Docker Compose YAML (goes into fleet dir)
 
 ```
 version: "3.9"
@@ -264,7 +264,7 @@ networks:
     name: elastic-stack-network
 ```
 
-## Fleet .env file (goes into fleet dir)
+##### Fleet .env file (goes into fleet dir)
 
 ```
 STACK_VERSION=8.15.0
