@@ -23,5 +23,14 @@ mkdir esk && mkdir fleet && mkdir certs && mkdir data
 cd data && mkdir es01data && mkdir kibanadata
 
 cd ../esk
-wget 
+wget https://raw.githubusercontent.com/epikritis/detection-engineering-de-stuff/main/esk-es-kibana-docker-compose.yml -O docker-compose.yml
+wget https://raw.githubusercontent.com/epikritis/detection-engineering-de-stuff/main/esk-es-kibana.env -O .env
+
+cd ../fleet
+wget https://raw.githubusercontent.com/epikritis/detection-engineering-de-stuff/main/fleet-docker-compose.yml -O docker-compose.yml
+wget https://raw.githubusercontent.com/epikritis/detection-engineering-de-stuff/main/fleet.env -O .env
+
+exit 0
+
+
 
