@@ -29,14 +29,14 @@ sudo docker compose ps -a
 
 5. On the Kibana dashboard, navigate to **Management** > **Fleet**  and add a Fleet server:
 
-- Fleet server IP: https://host_publicIP:8220
+- Fleet server IP: `https://host_publicIP:8220`
 - Once you click on continue, copy the generated `fleet-server-service-token` to the `.env` file in the `fleet` directory.
 
 6. `Cd` to the `fleet` directory and spin up the Fleet container.
 
 7. On the Kibana dashboard, navigate back to **Management** > **Fleet**  and modify the following Fleet server details:
 
-- On the Settings tab, Elasticsearch IP: https://host_publicIP:9200
+- On the Settings tab, Elasticsearch IP: `https://host_publicIP:9200`
 - On the Settings tab, under Advanced YAML configuration, enter `ssl.verification_mode: none`.
 
 **Remember to allow ports 9200, 9300 (if you have more than one ES node), 5601, 8220 on your firewall.**
@@ -59,8 +59,8 @@ Switch off containers safely by using `sudo docker stop <container_name>`.
 - Begin with fleet-server, then esk-kibana-1, then esk-es01-1.
 - When restarting the containers, follow the reverse order, i.e. ES then Kibana then Fleet.
 - To confirm that each container is up, do as follows:
-  - For ES, log in to https://host_publicIP:9200 using the user `elastic` and password set in the file `/esk/.env`.
-  - For Kibana, the URL is http://host_publicIP:5601 with the same credentials ^.
+  - For ES, log in to `https://host_publicIP:9200` using the user `elastic` and password set in the file `path-to-baseproject/esk/.env`.
+  - For Kibana, the URL is `http://host_publicIP:5601` with the same credentials ^.
   - For the Fleet container, you can check its health status in Kibana.
 
 ---

@@ -12,5 +12,8 @@ This lab works best on a cloud environment, but this costs money. You can make a
 
 :bangbang: The base concept of the lab is not my original work, see credits below:
 
-Reference: Practical Threat Detection Engineering; Megan Roddie, Jason Deyalsingh, Gary J. Katz
+**Reference:**
+
+Practical Threat Detection Engineering; Megan Roddie, Jason Deyalsingh, Gary J. Katz
+
 Link to resource: https://www.packtpub.com/en-us/product/practical-threat-detection-engineering-9781801076715
