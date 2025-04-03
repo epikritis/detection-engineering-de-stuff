@@ -9,7 +9,7 @@ For storage, minimum required should be ~30 GB. Please keep in mind that you req
 
 1. Download and run `de-lab-installer.sh`. Create two directories: `esk` and `fleet`.
 
-2. Modify the `.env` file in the `esk` directory by adding your passwords.
+2. Modify the `.env` file in the `esk` directory by adding your passwords and encryption keys.
 
 > Note that this is not good practice, and **NEVER** hardcode secrets in a production environment. Consider using a secrets manager or a key vault.
 
